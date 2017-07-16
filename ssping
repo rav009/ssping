@@ -12,7 +12,7 @@ then
 	        N=$(($N+1))
 	    fi
 	done
-        return
+    return
 fi
 
 
@@ -32,5 +32,4 @@ then
                 N=$(($N+1))
 	    fi
 	done
-        return
 fi
