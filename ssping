@@ -1,0 +1,36 @@
+#!/bin/sh
+#echo $1
+if  [ "$1" = "-s" ]
+then 
+	N=1
+	for file in /etc/shadowsocks/*_config.json
+	do
+	    if test -f $file
+	    then
+	        a=`grep -o '[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}' $file`
+	        echo $N:$a  
+	        N=$(($N+1))
+	    fi
+	done
+        return
+fi
+
+
+opt=${1:1}
+#echo "$opt"
+if  [ "$opt" -gt 0 ] 2>/dev/null ;
+then 
+	N=1
+	for file in /etc/shadowsocks/*_config.json
+	do
+	    if [ -f "$file" ];then
+                if [ "$opt" -eq "$N" ];then
+	            a=`grep -o '[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}' $file`
+	            #echo $N:$a
+                    ping $a -c 4  
+	        fi
+                N=$(($N+1))
+	    fi
+	done
+        return
+fi
