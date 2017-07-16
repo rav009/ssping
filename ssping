@@ -25,10 +25,10 @@ then
 	do
 	    if [ -f "$file" ];then
                 if [ "$opt" -eq "$N" ];then
-	            a=`grep -o '[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}' $file`
-	            echo $N. $file: $a
+	                 a=`grep -o '[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}' $file`
+	                 echo $N. $file: $a
                     ping $a -c 4  
-	        fi
+	             fi
                 N=$(($N+1))
 	    fi
 	done
