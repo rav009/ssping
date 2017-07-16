@@ -1,5 +1,5 @@
 # ssping
-A small tool based on the firmware "明月固件" that can show results of ping for a certain SS servers.
+A small tool based on the firmware "明月固件" that can list SS servers'IPs and show results of ping for a certain SS server.
 
 ##Installation:
 1. Copy the file "ssping" into directory "/usr/bin/".
