@@ -8,4 +8,5 @@ A small tool based on the firmware "明月固件" that can list SS servers'IPs a
 
 ##Usage:
 - Use "ssping -s" to show all SS servers IP stored in the json config files(/etc/shadowsocks/*_config.json).
-- Use "ssping -`<index>`" to ping a certain SS server(e.g. ssping -2).The number is the index presented in the "ssping -s" command.
+- Use "ssping -`<index>`" to ping a certain SS server(e.g. ssping -2).The argument is the index presented in the "ssping -s" command.
+- Use "ssping -u `<index>`" to use a certain SS json config file.The argument is the index presented in the "ssping -s" command.
