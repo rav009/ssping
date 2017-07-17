@@ -38,10 +38,11 @@ then
 	return
 fi
 
+#use a config file
 while getopts "u:" opt; do  
   case $opt in  
     u)  
-	echo $OPTARG
+	#echo $OPTARG
 	N=1
 	for file in /etc/shadowsocks/*_config.json
 	do
