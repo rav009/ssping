@@ -1,13 +1,14 @@
 #!/bin/sh
 
 opt=${1:1}
+cpath = "/etc/shadowsocks/*_config.json"
 
 #show the list
 if  [ "$opt" = "s" ]
 then 
 	echo $(uci get shadowsocks.@shadowsocks[0].config_file)
 	N=1
-	for file in /etc/shadowsocks/*_config.json
+	for file in `ls $cpath`
 	do
 		if test -f $file
 		then
@@ -24,7 +25,7 @@ fi
 if  [ "$opt" -gt 0 ] 2>/dev/null ;
 then 
 	N=1
-	for file in /etc/shadowsocks/*_config.json
+	for file in `ls $cpath`
 	do
 		if [ -f "$file" ];then
 				if [ "$opt" -eq "$N" ];then
@@ -44,7 +45,7 @@ while getopts "u:" opt; do
     u)  
 	#echo $OPTARG
 	N=1
-	for file in /etc/shadowsocks/*_config.json
+	for file in `ls $cpath`
 	do
 		if [ -f "$file" ];then
 				if [ "$OPTARG" -eq "$N" ];then
