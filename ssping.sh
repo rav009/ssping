@@ -1,7 +1,8 @@
 #!/bin/sh
 
 opt=${1:1}
-cpath = "/etc/shadowsocks/*_config.json"
+#no space when define variable!
+cpath="/etc/shadowsocks/*_config.json" 
 
 #show the list
 if  [ "$opt" = "s" ]
